@@ -7,3 +7,4 @@ x64/
 *.pdb
 *.ilk
 *.tlog/
+*.vcxproj.user
