@@ -27,6 +27,7 @@
     <ProjectGuid>{bfc5b53b-092a-443b-bf9c-cb5560d29c0d}</ProjectGuid>
     <RootNamespace>lbyarchmp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>car-acceleration-x64</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
