@@ -20,12 +20,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="acceleration_c.c" />
+    <ClInclude Include="acceleration.h" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <CustomBuild Include="acceleration_asm.asm">
+      <FileType>Document</FileType>
+      <Command>nasm.exe -f win64 "%(FullPath)" -o "$(IntDir)acceleration_asm.obj"</Command>
+      <Outputs>$(IntDir)acceleration_asm.obj;%(Outputs)</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{bfc5b53b-092a-443b-bf9c-cb5560d29c0d}</ProjectGuid>
-    <RootNamespace>lbyarchmp</RootNamespace>
+    <RootNamespace>car_acceleration_x64</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>car-acceleration-x64</ProjectName>
   </PropertyGroup>
@@ -84,8 +93,12 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(IntDir)acceleration_asm.obj;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>nasm.exe -f win64 "$(ProjectDir)acceleration_asm.asm" -o "$(IntDir)acceleration_asm.obj"</Command>
+    </PreBuildEvent>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
     </Manifest>
@@ -102,8 +115,12 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(IntDir)acceleration_asm.obj;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>nasm.exe -f win64 "$(ProjectDir)acceleration_asm.asm" -o "$(IntDir)acceleration_asm.obj"</Command>
+    </PreBuildEvent>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
     </Manifest>

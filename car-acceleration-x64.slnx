@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="car-acceleration-x64/lbyarch mp.vcxproj" Id="bfc5b53b-092a-443b-bf9c-cb5560d29c0d" />
+  <Project Path="car-acceleration-x64/car-acceleration-x64.vcxproj" Id="bfc5b53b-092a-443b-bf9c-cb5560d29c0d" />
 </Solution>
